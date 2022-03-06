@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # nginx config
-adduser -D -g 'www' www
+id -u www &>/dev/null || adduser -D -g 'www' www
 chown -R www:www /var/lib/nginx
 mkdir -p /run/nginx && touch /run/nginx/nginx.pid
 
